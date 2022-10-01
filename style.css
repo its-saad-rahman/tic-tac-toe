@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+:root {
+  --max-size: 100px;
+}
+
+.container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  max-width: 60rem;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+header {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+  height: 70vh;
+}
+
+.board .tile {
+  width: var(--max-size);
+  height: var(--max-size);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.tile.x::before,
+.tile.x::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 90px;
+  background: black;
+}
+.tile.x::before {
+  transform: rotate(45deg);
+}
+.tile.x::after {
+  transform: rotate(-45deg);
+}
+.tile.o::before,
+.tile.o::after {
+  content: '';
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+.tile.o::before {
+  width: 90px;
+  height: 90px;
+  background: black;
+}
+.tile.o::after {
+  width: 50px;
+  height: 50px;
+  background: white;
+}
+
+.result-board {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.reset {
+  border: none;
+  padding: 1em 2em;
+  background: hsl(120, 40%, 38%);
+  color: white;
+
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Mochiy Pop One', sans-serif;
+  display: none;
+}
+
+.show {
+  display: block;
+}
